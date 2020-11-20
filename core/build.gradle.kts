@@ -4,6 +4,7 @@ import javax.xml.parsers.DocumentBuilderFactory
 
 plugins {
     id("kotlin-multiplatform")
+    kotlin("plugin.serialization") version "1.4.10"
     `maven-publish`
 }
 
@@ -151,6 +152,7 @@ kotlin {
         commonMain {
             dependencies {
                 api("org.jetbrains.kotlin:kotlin-stdlib-common")
+                compileOnly("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
             }
         }
 
