@@ -21,6 +21,17 @@ val JDK_8: String by project
 //        }
 //    }
 //}
+publishing {
+    repositories {
+        maven {
+            url = uri("https://artifactory.vizio.com/artifactory/vizio_iot_maven")
+            credentials {
+                username = findProperty("artifactoryUser") as String? ?: System.getenv("ARTIFACTORY_USER")
+                password = findProperty("artifactoryApiKey") as String? ?: System.getenv("ARTIFACTORY_API_KEY")
+            }
+        }
+    }
+}
 
 kotlin {
     infra {
