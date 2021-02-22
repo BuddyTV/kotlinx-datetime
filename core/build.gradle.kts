@@ -27,6 +27,9 @@ kotlin {
         target("linuxX64")
         target("mingwX64")
 
+        target("linuxArm32Hfp")
+        target("linuxArm64")
+
         common("darwin") {
             target("macosX64")
             target("iosX64")
